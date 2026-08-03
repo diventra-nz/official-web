@@ -4,6 +4,8 @@ import { projects } from "@/lib/projects";
 import { services } from "@/lib/services";
 import { siteConfig } from "@/lib/site";
 
+export const dynamic = "force-static";
+
 const staticPaths = [
   "/",
   "/about",

@@ -1,7 +1,7 @@
 "use client";
 
-import { useActionState, useEffect, useRef } from "react";
-import { submitContactForm, type ContactFormState } from "@/app/contact/actions";
+import { useEffect, useRef, useState, useTransition } from "react";
+import { submitContactForm, type ContactFormState } from "@/lib/contact-form";
 import { serviceInterestOptions } from "@/lib/services";
 import MagneticButton from "@/components/ui/MagneticButton";
 import TransitionLink from "@/components/ui/TransitionLink";
@@ -31,7 +31,8 @@ const timelineOptions = [
 ];
 
 export default function ContactForm() {
-  const [state, formAction, pending] = useActionState(submitContactForm, initialState);
+  const [state, setState] = useState<ContactFormState>(initialState);
+  const [pending, startTransition] = useTransition();
   const startedRef = useRef(false);
 
   function trackFormStart() {
@@ -46,6 +47,16 @@ export default function ContactForm() {
     }
   }, [state.ok]);
 
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+
+    startTransition(async () => {
+      const result = await submitContactForm(formData);
+      setState(result);
+    });
+  }
+
   if (state.ok) {
     return (
       <div
@@ -59,7 +70,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form action={formAction} className="space-y-6" noValidate onFocus={trackFormStart}>
+    <form onSubmit={handleSubmit} className="space-y-6" noValidate onFocus={trackFormStart}>
       {state.message && !state.ok && (
         <p
           className="rounded-[var(--radius-sm)] border border-[var(--color-accent)]/30 bg-[var(--color-accent-muted)] px-4 py-3 text-sm text-[var(--color-ink)]"
