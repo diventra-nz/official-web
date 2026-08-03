@@ -7,6 +7,7 @@ import MagneticButton from "@/components/ui/MagneticButton";
 import { analyticsEvents } from "@/lib/analytics";
 import { mobileNavSections, primaryNav, serviceNavItems } from "@/lib/navigation";
 import { getLenis } from "@/lib/scroll";
+import { withBasePath } from "@/lib/paths";
 
 const SCROLL_THRESHOLD = 48;
 const SCROLL_DELTA = 8;
@@ -360,7 +361,7 @@ export default function Header() {
                 aria-label="Diventra home"
               >
                 <img
-                  src="/icons/Diventra.svg"
+                  src={withBasePath("/icons/Diventra.svg")}
                   alt="Diventra"
                   width={136}
                   height={29}

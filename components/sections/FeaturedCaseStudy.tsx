@@ -5,6 +5,7 @@ import Reveal from "@/components/ui/Reveal";
 import { getCaseStudy } from "@/lib/case-studies";
 import { projects } from "@/lib/projects";
 import { analyticsEvents } from "@/lib/analytics";
+import { withBasePath } from "@/lib/paths";
 
 const featured = projects[0];
 const featuredCaseStudy = getCaseStudy(featured.slug)!;
@@ -20,8 +21,8 @@ export default function FeaturedCaseStudy() {
             <div className="relative aspect-[16/10] overflow-hidden rounded-[var(--radius-md)] bg-[var(--color-void-surface)]">
               {featured.image.endsWith(".mp4") ? (
                 <video
-                  src={featured.image}
-                  poster={featured.imagePoster}
+                  src={withBasePath(featured.image)}
+                  poster={featured.imagePoster ? withBasePath(featured.imagePoster) : undefined}
                   autoPlay
                   muted
                   loop
@@ -30,7 +31,7 @@ export default function FeaturedCaseStudy() {
                 />
               ) : (
                 <Image
-                  src={featured.image}
+                  src={withBasePath(featured.image)}
                   alt={featured.imageAlt}
                   fill
                   className="object-cover"

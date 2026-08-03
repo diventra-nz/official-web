@@ -1,3 +1,5 @@
+import { withBasePath } from "@/lib/paths";
+
 interface ServiceIconProps {
   src: string;
   className?: string;
@@ -13,6 +15,7 @@ export default function ServiceIcon({
   well = false,
   tone = "light",
 }: ServiceIconProps) {
+  const resolvedSrc = withBasePath(src);
   const textColor =
     tone === "dark" ? "text-[var(--color-brand-cyan)]" : "text-[var(--color-brand-violet)]";
   const wellBg =
@@ -24,8 +27,8 @@ export default function ServiceIcon({
       style={{
         width: size,
         height: size,
-        WebkitMaskImage: `url(${src})`,
-        maskImage: `url(${src})`,
+        WebkitMaskImage: `url(${resolvedSrc})`,
+        maskImage: `url(${resolvedSrc})`,
         WebkitMaskRepeat: "no-repeat",
         maskRepeat: "no-repeat",
         WebkitMaskPosition: "center",

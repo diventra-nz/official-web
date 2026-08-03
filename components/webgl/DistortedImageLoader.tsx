@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { withBasePath } from "@/lib/paths";
 
 interface DistortedImageLoaderProps {
   src: string;
@@ -25,6 +26,7 @@ export function DistortedImageFallback({
   imageWidth,
   imageHeight,
 }: DistortedImageLoaderProps) {
+  const resolvedSrc = withBasePath(src);
   const isHeightFit = objectFit === "height";
   const heightFitImageClass = "block h-full w-auto max-w-none";
 
@@ -35,7 +37,7 @@ export function DistortedImageFallback({
       >
         {imageWidth && imageHeight ? (
           <Image
-            src={src}
+            src={resolvedSrc}
             alt={alt}
             width={imageWidth}
             height={imageHeight}
@@ -45,7 +47,7 @@ export function DistortedImageFallback({
           />
         ) : (
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={src} alt={alt} className={heightFitImageClass} />
+          <img src={resolvedSrc} alt={alt} className={heightFitImageClass} />
         )}
       </div>
     );
@@ -57,7 +59,7 @@ export function DistortedImageFallback({
 
   return (
     <div className={`relative overflow-hidden ${containerBg} ${aspectClass} ${className}`}>
-      <Image src={src} alt={alt} fill priority={priority} className={imageClass} sizes={sizes} />
+      <Image src={resolvedSrc} alt={alt} fill priority={priority} className={imageClass} sizes={sizes} />
     </div>
   );
 }

@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import type { LottieRefCurrentProps } from "lottie-react";
 import type { DotLottie } from "@lottiefiles/dotlottie-react";
+import { withBasePath } from "@/lib/paths";
 
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 const DotLottieReact = dynamic(
@@ -35,12 +36,13 @@ export default function LottiePlayer({
   autoplay = true,
   playOnHover = false,
 }: LottiePlayerProps) {
+  const resolvedSrc = withBasePath(src);
   const isDotLottie = isDotLottieSource(src);
 
   if (isDotLottie) {
     return (
       <DotLottiePlayer
-        src={src}
+        src={resolvedSrc}
         className={className}
         loop={loop}
         autoplay={autoplay}
@@ -51,7 +53,7 @@ export default function LottiePlayer({
 
   return (
     <JsonLottiePlayer
-      src={src}
+      src={resolvedSrc}
       className={className}
       loop={loop}
       autoplay={autoplay}

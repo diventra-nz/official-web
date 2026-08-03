@@ -1,5 +1,7 @@
 "use client";
 
+import { withBasePath } from "@/lib/paths";
+
 interface GalleryVideoProps {
   src: string;
   poster: string;
@@ -17,14 +19,17 @@ export default function GalleryVideo({
   aspectRatio,
   videoFilter,
 }: GalleryVideoProps) {
+  const resolvedSrc = withBasePath(src);
+  const resolvedPoster = withBasePath(poster);
+
   return (
     <div
       className={`relative flex w-full items-center justify-center overflow-hidden bg-transparent ${aspectRatio ? "" : aspectClass}`}
       style={aspectRatio ? { aspectRatio } : undefined}
     >
       <video
-        src={src}
-        poster={poster}
+        src={resolvedSrc}
+        poster={resolvedPoster}
         autoPlay
         loop
         muted

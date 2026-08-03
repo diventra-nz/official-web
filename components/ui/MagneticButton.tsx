@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, isValidElement } from "react";
 import { subscribePointer, getPointer } from "@/lib/pointer-motion";
+import { withBasePath } from "@/lib/paths";
 import { usePageTransition } from "@/components/providers/TransitionProvider";
 import { trackEvent } from "@/lib/analytics";
 
@@ -223,11 +224,12 @@ export default function MagneticButton(props: MagneticButtonProps) {
 
   const { href } = props;
   const external = isExternalHref(href);
+  const resolvedHref = external ? href : withBasePath(href);
 
   return (
     <a
       ref={wrapperRef as React.Ref<HTMLAnchorElement>}
-      href={href}
+      href={resolvedHref}
       className={classes}
       data-cursor
       aria-label={ariaLabel}

@@ -4,6 +4,7 @@ import ServiceIcon from "@/components/ui/ServiceIcon";
 import MagneticButton from "@/components/ui/MagneticButton";
 import LottiePlayer from "@/components/ui/LottiePlayer";
 import { projects } from "@/lib/projects";
+import { withBasePath } from "@/lib/paths";
 
 interface ServicePageTemplateProps {
   service: Service;
@@ -39,7 +40,7 @@ export default function ServicePageTemplate({ service }: ServicePageTemplateProp
             {service.media?.type === "video" ? (
               <div className="relative aspect-square w-[40dvh] max-w-full shrink-0 overflow-hidden rounded-[var(--radius-lg)] border border-[var(--color-grey-border)] bg-[var(--color-canvas)]">
                 <video
-                  src={service.media.src}
+                  src={withBasePath(service.media.src)}
                   autoPlay
                   muted
                   loop
