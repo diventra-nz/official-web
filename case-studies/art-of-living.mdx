@@ -1,0 +1,77 @@
+# Art of Living Documentary
+
+## Overview
+
+Government communications rarely feel like stories worth reading. The default mode is institutional: information organised for compliance, not for understanding. The Art of Living project asked a different question — what if a Ministry of Education initiative was presented with the same care and craft as editorial journalism?
+
+Art of Living was a documentary series commissioned by the Ministry of Education, exploring how New Zealand educators approach wellbeing and flourishing in their schools. My role was to build the digital home for the series: a scroll-driven narrative platform that held film, editorial writing, and interactive content in a single coherent experience.
+
+---
+
+## My Role
+
+Frontend Developer & Motion Designer. I designed and built the complete web experience — scroll-driven narrative architecture, embedded video integration, editorial layout system, and the motion design that connected chapters to one another. I also contributed to the visual design direction, working with the content team to establish the site's editorial tone.
+
+---
+
+## The Problem
+
+Documentary series on the web face a specific attention problem. A feature film earns a two-hour commitment before it starts. A web page has seconds. The platform needed to earn extended attention from educators and policy audiences who arrive with purpose but leave quickly if the experience doesn't respect their time.
+
+The content was rich — filmed interviews, written essays, data, case studies — but it risked overwhelming visitors if presented as a content dump. The challenge was sequencing: making the complexity feel like a journey rather than an archive.
+
+---
+
+## The Approach
+
+The experience was structured as chapters — distinct narrative sections that could be consumed independently but rewarded visitors who moved through the whole. Each chapter opened with a short film segment, followed by editorial writing that deepened the story the film had introduced.
+
+Scroll-driven reveals paced the content delivery. Rather than showing everything at once, text and images entered as visitors read — creating a reading rhythm that matched the documentary's own pacing. Motion was always in service of story, never decoration.
+
+Performance was critical. The audience included educators in schools with managed IT environments and variable broadband. Video was lazy-loaded and offered a reduced-motion fallback. Pages were statically generated.
+
+---
+
+## Key Features
+
+- Scroll-driven narrative structure with chapter-based navigation
+- Embedded documentary film segments with lazy-loading
+- Editorial layout system for long-form written content
+- Motion design connecting chapters and pacing content delivery
+- Reduced-motion fallback for accessibility
+- Static generation for fast delivery to school network environments
+- MDX-based content system for editorial updates without code changes
+
+---
+
+## Technical Decisions
+
+**Scroll-driven animation via GSAP ScrollTrigger.** GSAP gave us precise control over when and how content entered — line-by-line text reveals, image transitions, chapter transitions. Critically, all animations were designed with graceful degradation: the content read perfectly without animation, and GSAP was layered on top.
+
+**MDX for editorial content.** The written content was complex — editorial prose, pull quotes, data visualisations, embedded media. MDX let us treat each content element as a component while keeping the writing in a format that non-technical editors could contribute to.
+
+**Video strategy.** Autoplay background video is a performance disaster on school networks. We chose a poster-plus-play approach for all film segments: a high-quality still image with a clear play affordance, loading the video only when requested. Chapter transitions used CSS animations rather than video to keep the experience fluid on constrained connections.
+
+---
+
+## Challenges
+
+**Holding attention across long-form content.** Editorial journalism has established conventions for pacing long reads — subheadings, pull quotes, section breaks, image placement. We studied these carefully and applied them to a format that had to work as both a reading experience and a viewing experience.
+
+**Cross-device editorial layout.** Long-form editorial content that looks considered on desktop frequently collapses on mobile. Every layout decision had to be made with both contexts in mind simultaneously. We developed a set of layout primitives — essay column, full-bleed image, pull quote, film embed — that composed correctly across all breakpoints.
+
+**Government sign-off on motion.** The Ministry of Education's approval process included accessibility review. All animated elements required documented reduced-motion fallbacks, and we had to make the case that the motion was purposeful and not merely decorative.
+
+---
+
+## Outcome
+
+The platform launched alongside the first documentary release and served as the primary distribution point for the series. Dwell time metrics were significantly above the Ministry's benchmarks for comparable educational content sites. The editorial team used the MDX system to publish new chapters independently throughout the series run.
+
+---
+
+## What I Learned
+
+Long-form digital content is one of the hardest things to get right on the web. It asks something of the visitor that most digital experiences don't: sustained attention. Building for that requires thinking about pacing, rhythm, and rest — the same craft questions a documentary filmmaker asks.
+
+I learned that motion design and editorial design are the same discipline asking the same question: how do you move someone from one idea to the next without losing them?

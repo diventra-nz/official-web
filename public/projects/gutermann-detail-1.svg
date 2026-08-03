@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#041820"/>
+  <rect x="40" y="40" width="60" height="2" fill="#3DB8C5" opacity="0.85"/>
+  <text x="40" y="280" font-family="system-ui,sans-serif" font-size="32" font-weight="500" fill="#FAF9F6" opacity="0.9">Network map</text>
+  <text x="40" y="320" font-family="system-ui,sans-serif" font-size="14" fill="#3DB8C5" letter-spacing="2">LOGGERS · LEAKS · GIS</text>
+  <circle cx="620" cy="180" r="120" fill="#0A6B7C" opacity="0.15"/>
+  <circle cx="560" cy="320" r="10" fill="#3DB8C5" opacity="0.85"/>
+  <circle cx="640" cy="280" r="7" fill="#3DB8C5" opacity="0.55"/>
+  <circle cx="700" cy="360" r="6" fill="#3DB8C5" opacity="0.4"/>
+</svg>

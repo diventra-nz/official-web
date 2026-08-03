@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800">
+  <rect width="600" height="800" fill="#062830"/>
+  <rect x="36" y="40" width="50" height="2" fill="#3DB8C5" opacity="0.85"/>
+  <text x="36" y="380" font-family="system-ui,sans-serif" font-size="28" font-weight="500" fill="#FAF9F6" opacity="0.9">AI leak scoring</text>
+  <text x="36" y="420" font-family="system-ui,sans-serif" font-size="13" fill="#3DB8C5" letter-spacing="2">CORRELATION · SPECTRUM</text>
+  <circle cx="460" cy="160" r="140" fill="#0A6B7C" opacity="0.12"/>
+  <rect x="360" y="520" width="180" height="8" rx="4" fill="#0A6B7C" opacity="0.4"/>
+  <rect x="360" y="520" width="120" height="8" rx="4" fill="#3DB8C5" opacity="0.85"/>
+  <rect x="360" y="548" width="180" height="8" rx="4" fill="#0A6B7C" opacity="0.4"/>
+  <rect x="360" y="548" width="90" height="8" rx="4" fill="#3DB8C5" opacity="0.6"/>
+  <rect x="360" y="576" width="180" height="8" rx="4" fill="#0A6B7C" opacity="0.4"/>
+  <rect x="360" y="576" width="150" height="8" rx="4" fill="#3DB8C5" opacity="0.75"/>
+</svg>

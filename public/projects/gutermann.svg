@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#041820"/>
+      <stop offset="100%" stop-color="#0A6B7C" stop-opacity="0.4"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#g)"/>
+  <rect x="60" y="60" width="80" height="3" fill="#3DB8C5" opacity="0.9"/>
+  <text x="60" y="350" font-family="system-ui,sans-serif" font-size="52" font-weight="500" fill="#FAF9F6" opacity="0.92">Gutermann Cloud</text>
+  <text x="60" y="410" font-family="system-ui,sans-serif" font-size="16" fill="#3DB8C5" letter-spacing="4">LEAK DETECTION PLATFORM</text>
+  <circle cx="1080" cy="120" r="220" fill="#0A6B7C" opacity="0.12"/>
+  <circle cx="140" cy="670" r="160" fill="#3DB8C5" opacity="0.06"/>
+  <circle cx="920" cy="520" r="8" fill="#3DB8C5" opacity="0.8"/>
+  <circle cx="980" cy="480" r="6" fill="#3DB8C5" opacity="0.55"/>
+  <circle cx="860" cy="560" r="5" fill="#3DB8C5" opacity="0.45"/>
+  <line x1="920" y1="520" x2="980" y2="480" stroke="#3DB8C5" stroke-width="1.5" opacity="0.35"/>
+  <line x1="920" y1="520" x2="860" y2="560" stroke="#3DB8C5" stroke-width="1.5" opacity="0.35"/>
+</svg>
